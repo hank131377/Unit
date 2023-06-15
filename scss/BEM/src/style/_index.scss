@@ -1,0 +1,62 @@
+$gutter-width: 20px;
+$grid-num: 12;
+*{
+  box-sizing:border-box;
+}
+
+.content {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__bg--gray {
+        background-color: #ccc;
+      }
+    &__bg--orange {
+        background-color: orange;
+      }
+    &__bg--purple {
+        background-color: Plum;
+      }
+  }
+
+  .wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:  0 ($gutter-width/2);
+  }
+  
+  .row{
+    display: flex;
+    flex-wrap : wrap;
+    margin: 0 (-$gutter-width/2);
+  }
+  @for $i from 1 to $grid-num+1{
+    .col-#{$i} {
+      max-width: 100% * ($i /$grid-num);
+      flex: 0 0 (100% * ($i /$grid-num));
+      padding: 0 ($gutter-width/2);
+    }
+  }
+  
+  .no-gutter{
+    padding: 0;
+  }
+  .sponsor {
+    margin: 0 ($gutter-width / 2);
+  }
+  .form{
+    padding: 0 ($gutter-width / 2);
+  }
+  
+  @media (max-width:768px){
+     @for $i from 1 to $grid-num+1 {
+      .col-#{$i} {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+    .sponsor {
+      margin: 0 (-$gutter-width / 2);
+    }
+  }

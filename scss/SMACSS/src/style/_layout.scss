@@ -1,0 +1,67 @@
+.wrap{
+    margin: 0 auto;
+    width: 640px;
+}
+
+.flex{
+    display: flex;
+}
+
+.mtb-24{
+    margin: 24px 0;
+}
+
+.mlr-20{
+    margin: 0 20px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-0{
+    margin-top: 0px;
+}
+
+.content{
+    width: 288px;
+}
+
+.title{
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.new_img{
+    width: $new_img;
+    height: $new_img;
+}
+
+.adv_img{
+    width: $adv_img;
+    height: $adv_img;
+}
+
+.box{
+    height: 150px;
+    width: 150px;
+    float: left;
+}
+
+@for $i from 1 to 6 {
+    .box-#{$i}{
+        background-color: darken(#fff, $i*10%);
+    }
+}
+
+$color:(
+    'primary':blue,
+    'danger':red,
+    'secondary':green
+);
+
+@each $key ,$value in $color{
+    .box-#{$key}{
+        background-color: $value;
+    }
+}
