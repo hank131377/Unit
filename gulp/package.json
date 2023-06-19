@@ -19,6 +19,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-jade": "^1.1.0",
     "gulp-load-plugins": "^2.0.8",
@@ -26,6 +27,8 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "minimist": "^1.2.8",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "sass": "^1.63.4"

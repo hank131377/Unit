@@ -1,0 +1,20 @@
+{
+  "name": "gulp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "kai <hank1313_net@yahoo.com.tw>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/hank131377/Unit",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.7.0"
+  }
+}

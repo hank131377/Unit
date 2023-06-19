@@ -1,17 +1,22 @@
 const gulp = require('gulp')
+// load-plugins
 const $ = require('gulp-load-plugins')()
 const { series } = require('gulp')
-//jade
+// jade
 // const jade = require('gulp-jade')
-//sass
+// sass
 const sass = require('gulp-sass')(require('sass'))
-//PostCSS
+// PostCSS
 // const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 // babel
 // const sourcemaps = require('gulp-sourcemaps');
 // const babel = require('gulp-babel');
 // const concat = require('gulp-concat');
+// uglify
+// const uglify = require('gulp-uglify');
+// clean-css
+const cleanCSS = require('gulp-clean-css')
 
 const copyHTML = () => {
   return gulp.src('./source/**/*.html').pipe(gulp.dest('./public/'))
@@ -39,6 +44,7 @@ function style() {
     .pipe($.sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe($.postcss(plugins))
+    .pipe(cleanCSS())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./public/css'))
 }
@@ -54,6 +60,7 @@ const babel = () => {
       })
     )
     .pipe($.concat('all.js'))
+    .pipe($.uglify())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./public/js'))
 }
