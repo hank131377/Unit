@@ -1,4 +1,9 @@
 body {
   color: blue;
-  background-color: orange;
+  background-color: gray;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
 }
+/*# sourceMappingURL=all.css.map */

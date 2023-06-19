@@ -2,5 +2,7 @@ $primary:blue;
 
 body{
     color: $primary;
-    background-color: orange;
+    background-color: gray;
+    transform: rotate(10deg);
+    filter: blur(2px);
 }
