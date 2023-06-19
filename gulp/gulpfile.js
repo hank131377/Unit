@@ -17,6 +17,21 @@ const autoprefixer = require('autoprefixer')
 // const uglify = require('gulp-uglify');
 // clean-css
 const cleanCSS = require('gulp-clean-css')
+// minimist + gulp-if
+const minimist = require('minimist')
+
+const envOptions = {
+  string: 'env',
+  default: { env: 'develop' },
+}
+const options = minimist(process.argv.slice(2), envOptions)
+
+//clean
+const clean = () => {
+  return gulp.src('./public', { read: false }).pipe($.clean())
+}
+
+exports.clean = clean
 
 const copyHTML = () => {
   return gulp.src('./source/**/*.html').pipe(gulp.dest('./public/'))
@@ -44,7 +59,7 @@ function style() {
     .pipe($.sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe($.postcss(plugins))
-    .pipe(cleanCSS())
+    .pipe($.if(options.env === 'prod', cleanCSS()))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./public/css'))
 }
@@ -60,7 +75,7 @@ const babel = () => {
       })
     )
     .pipe($.concat('all.js'))
-    .pipe($.uglify())
+    .pipe($.if(options.env === 'prod', $.uglify()))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./public/js'))
 }
@@ -75,4 +90,4 @@ function watch() {
 
 exports.watch = watch
 
-exports.default = series(watch)
+exports.default = series(copyHTML, style, babel)

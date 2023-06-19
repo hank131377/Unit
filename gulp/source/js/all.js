@@ -3,6 +3,6 @@ let newFunction = () => {
 }
 
 let oldFunction = () => {
-  console.log('8')
+  console.log('9')
 }
 newFunction()
