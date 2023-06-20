@@ -20,6 +20,8 @@ const cleanCSS = require('gulp-clean-css')
 // minimist + gulp-if
 const minimist = require('minimist')
 
+console.log(process.argv, process.argv.slice(2))
+
 const envOptions = {
   string: 'env',
   default: { env: 'develop' },
@@ -82,12 +84,22 @@ const babel = () => {
 
 exports.babel = babel
 
+const imagesMin = () => {
+  return gulp
+    .src('./source/images/*')
+    .pipe($.if(options.env === 'prod', $.imagemin()))
+    .pipe(gulp.dest('./public/images'))
+}
+
+exports.image = imagesMin
+
 function watch() {
   gulp.watch('./source/index.html', copyHTML)
   gulp.watch('./source/scss/**/*.scss', style)
   gulp.watch('./source/js/**/*.js', babel)
+  gulp.watch('./source/images/*', imagesMin)
 }
 
 exports.watch = watch
 
-exports.default = series(copyHTML, style, babel)
+exports.default = series(copyHTML, style, babel, imagesMin)

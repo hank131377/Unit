@@ -1,4 +1,4 @@
 const newFu = () => {
-  console.log('19')
+  console.log('20')
 }
 newFu()

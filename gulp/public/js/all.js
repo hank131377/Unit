@@ -10,7 +10,7 @@ newFunction();
 "use strict";
 
 var newFu = function newFu() {
-  console.log('19');
+  console.log('20');
 };
 newFu();
 //# sourceMappingURL=all.js.map
