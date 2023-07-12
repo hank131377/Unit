@@ -1,5 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 import {  useDispatch } from 'react-redux'
+
 import { todoAdd } from '../slice/todoSlice'
 
 interface Props{
@@ -7,7 +8,7 @@ interface Props{
     setTodo:(value: string) => void;
 }
 
-const InputField:React.FC<Props> = ({todo,setTodo}) => {
+const InputField:FC<Props> = ({todo,setTodo}) => {
     const dispatch = useDispatch()
     return (
    <div className='input'>
@@ -22,7 +23,7 @@ const InputField:React.FC<Props> = ({todo,setTodo}) => {
             })
         )
     
-    }}>確認</button>
+    }}>新增</button>
    </div>
   )
 }

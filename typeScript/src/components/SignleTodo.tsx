@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import {AiFillDelete, AiFillEdit} from 'react-icons/ai'
-import {MdDone} from 'react-icons/md'
-
+import { useState , FC } from 'react';
+import { MdDone } from 'react-icons/md'
+import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
+
 import { todoRemove, todoEdit,todoDone } from '../slice/todoSlice'
 
 interface Props{
@@ -11,7 +11,7 @@ interface Props{
     isDone:boolean;
 }
 
-const SignleTodo:React.FC<Props> = ({todo,id,isDone}) => {
+const SignleTodo:FC<Props> = ({todo,id,isDone}) => {
     const dispatch = useDispatch()
     const [edit,setEdit]=useState<boolean>(false)
     const [editText,setEditText]=useState<string>(todo)
@@ -26,7 +26,6 @@ const SignleTodo:React.FC<Props> = ({todo,id,isDone}) => {
                 <AiFillEdit onClick={()=>{
                     setEdit(!edit)
                     if(edit){
-                        console.log('eidt')
                         dispatch(
                             todoEdit({
                                 id,

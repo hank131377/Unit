@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import  { useState,FC } from 'react';
+import { useSelector } from 'react-redux'
+
 
 import InputField from './components/InputField';
+import TodoList from './components/TodoList';
 import './style/All.scss'
 
-import { useSelector } from 'react-redux'
-import TodoList from './components/TodoList';
-
-const App:React.FC = () => {
+const App:FC = () => {
 
   const [todo,setTodo]=useState<string>('')
-
-  const todolist = useSelector((store:any)=>store.todo)
-  
-  console.log(todolist)
+  const todolist = useSelector((store:{todo:[]})=>{
+    return store.todo})
   return (
     <div className="App">
       <span className="heading">TodoList</span>

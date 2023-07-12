@@ -22,7 +22,6 @@ const todoSlice = createSlice({
             store.push(action.payload)
         },
         todoRemove:(store,action)=>{
-            console.log(store,action.payload)
             return store.filter((v)=>{
                 return v.id !== action.payload
             })

@@ -1,1 +1,1 @@
-react redux typeScrpit scss todolist exercise
+react redux typeScrpit scss todolist webpack exercise

@@ -1,14 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 import SignleTodo from './SignleTodo'
 
 interface Props{
-    todolist:any
+    todolist:[]
 }
 
-const TodoList:React.FC<Props> = ({todolist}) => {
+const TodoList:FC<Props> = ({todolist}) => {
   return (
     <div className='todos'>
-        {todolist.map((v:any)=>{
+        {todolist.map((v:{todo:string,id:number,isDone:boolean})=>{
             const todo = v.todo
             const id = v.id
             const isDone = v.isDone
