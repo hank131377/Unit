@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import axios from "axios";
 
-export default function Home() {
+export default async function Home() {
+  const url = 'https://api.themoviedb.org/3/tv/top_rated';
+  const res = await axios.get(url)
   return (
     <main className={styles.main}>
       <div className={styles.description}>
