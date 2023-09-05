@@ -1,0 +1,4 @@
+{
+  "test": "哈囉 {{name}}",
+  "keyWithCount": "{{count}} 物品"
+}

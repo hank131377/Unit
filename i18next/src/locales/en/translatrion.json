@@ -1,0 +1,9 @@
+{
+  "nameTitle": "This is your name",
+  "userMessagesUnread_one": "Hello <1>{{name}}</1>, you have {{count}} unread message. <5>Go to message</5>.",
+  "userMessagesUnread_other": "Hello <1>{{name}}</1>, you have {{count}} unread messages.  <5>Go to messages</5>.",
+  "test": "Hello {{name}}",
+  "keyWithCount_one": "{{count}} item",
+  "keyWithCount_other": "{{count}} items",
+  "key1_interval": "(1)[one item];(2-7)[a few items];(10-inf)[a lot of items];"
+}
