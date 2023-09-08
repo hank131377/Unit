@@ -8,7 +8,7 @@ const Ajax = () => {
   useEffect(() => {
     const axiosData = async () => {
       try {
-        const res = await axios.get('https://pokeapi.co/api/v2/pokemon/1/')
+        const res = await axios.get('https://pokeapi.co/api/v2/pokemon-form/1/')
         if (res.status !== 200) throw new Error('Ajax fail')
         setData(res.data)
         setAjaxMessage('Ajax success')
@@ -19,9 +19,11 @@ const Ajax = () => {
     }
     axiosData()
   }, [])
+
   return (
     <div className="ans" style={{ color: AjaxRes ? 'green' : 'red' }}>
-      {ajaxMessage}
+      <p>{ajaxMessage}</p>
+      <div></div>
     </div>
   )
 }
