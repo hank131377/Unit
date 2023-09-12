@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Ajax from './Ajax'
 import QueryAjax from './QueryAjax'
+import Mutation from './Mutation'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -17,7 +18,8 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <React.StrictMode>
       {/* <Ajax /> */}
-      <QueryAjax />
+      {/* <QueryAjax /> */}
+      <Mutation />
       <ReactQueryDevtools />
     </React.StrictMode>
   </QueryClientProvider>
