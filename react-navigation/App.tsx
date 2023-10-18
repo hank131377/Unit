@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar'
 import { useState } from 'react'
 import {
   StyleSheet,
@@ -7,7 +6,6 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
-  Button,
   Alert,
   Switch,
 } from 'react-native'
@@ -79,6 +77,7 @@ export default function App() {
       })
     )
   }
+
   return (
     <SafeAreaView>
       <View style={styles.input}>
